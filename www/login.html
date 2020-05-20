@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="stile\progetto-bootstrap\css\bootstrap.min.css">
+		<link rel="stylesheet" href="stile\myStyle.css">
+		<script src="js\jquery-3.1.1.min.js"></script>
+		<script src="js\index.js"></script>
+		<script src="js\login.js"></script>
+		<title>Login</title>
+	</head>
+
+	<body id="body">
+		<div id="top-bar">
+			<nav id="header" class="collapse navbar-collapse navbar-fixed-top">
+				<div class="container-fluid">
+					<div class="navbar-header">
+						<a class="navbar-brand forchetta" href="index.html">LA FORCHETTA</a>
+					</div>
+					<ul id="navbar" class="nav navbar-nav">
+						<li class="active"><a href="index.html">Home</a></li>
+						<li><a href="lista_ristoranti.html">Ristoranti</a></li>
+						<li><a href="ricerca.html">Ricerca</a></li>
+						<li><a href="prenotazione.html">Prenota</a></li>
+						<li><a href="#">Login</a></li>
+					</ul>
+				</div>
+			</nav>
+
+			<div class="jumbotron">
+				<div id="banner">
+					<h1 class="forchetta">LA FORCHETTA</h1>
+					<hr>
+					<p class="forchetta">Consulta i nostri ristoranti e prenota online</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="container">
+			<!--<h1 class="forchetta title">LOGIN</h1>-->
+
+			<div class="row">
+				<!--registrazione-->
+				<div class="col-lg-6 col-md-6">
+					<p class="center">Sei nuovo? Allora iscriviti:</p>
+					<form id="registrazione" action="">
+						<p id="errore-registrazione"></p>
+						<div class="form-group row">
+							<label for="email-input" class="col-lg-2 col-md-2 col-form-label">Email</label>
+							<div class="col-lg-10 col-md-10">
+								<input class="form-control" type="email" id="email-input-r" required>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="nome-input-r" class="col-lg-2 col-md-2 col-form-label">Nome</label>
+							<div class="col-lg-10 col-md-10">
+								<input class="form-control" type="text" id="nome-input-r" required>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="cognome-input-r" class="col-lg-2 col-md-2 col-form-label">Cognome</label>
+							<div class="col-lg-10 col-md-10">
+								<input class="form-control" type="text" id="cognome-input-r" required>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="password-input-r" class="col-lg-2 col-md-2 col-form-label">Password</label>
+							<div class="col-lg-10 col-md-10">
+								<input class="form-control" type="password" id="password-input-r" required>
+							</div>
+						</div>
+						<button type="submit" id="registrazione-submit" class="btn form-btn">Iscriviti</button>
+					</form>
+				</div>
+
+				<!--login-->
+				<div class="col-lg-6 col-md-6">
+					<p class="center">Hai gi&agrave; un account? Accedi:</p>
+					<form id="login" action="">
+						<p id="errore-login"></p>
+						<div class="form-group row">
+							<label for="email-input" class="col-lg-2 col-md-2 col-form-label">Email</label>
+							<div class="col-lg-10 col-md-10">
+								<input class="form-control" type="email" id="email-input-l" required>
+							</div>
+						</div>
+						<div class="form-group row">
+							<label for="password-input" class="col-lg-2 col-md-2 col-form-label">Password</label>
+							<div class="col-lg-10 col-md-10">
+								<input class="form-control" type="password" id="password-input-l" required>
+							</div>
+						</div>
+						<button type="submit" id="login-submit" class="btn form-btn">Accedi</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</body>
+
+	<div class="panel-footer">
+		Applicazioni Web e Cloud
+		<span class="align-center">
+			<!--target="_blank permette di aprire la pagina linkata in una nuova scheda-->
+			<a href="https://www.facebook.com/" target="_blank" title="Facebook"><img src="images/facebook_white.png" class="icon"></a>
+			<a href="https://www.instagram.com/" target="_blank" title="Instagram"><img src="images/instagram_white.png" class="icon"></a>
+			<a href="https://twitter.com/" target="_blank" title="Twitter"><img src="images/twitter_white.png" class="icon"></a>
+			<a href="https://it.pinterest.com/" target="_blank" title="Pinterest"><img src="images/pinterest_white.png" class="icon"></a>
+		</span>
+		<span class="align-dx">Teresa Tanzi</span>
+	</div>
+</html>

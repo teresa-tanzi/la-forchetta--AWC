@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="stile\progetto-bootstrap\css\bootstrap.min.css">
+		<link rel="stylesheet" href="stile\myStyle.css">
+		<script src="js\jquery-3.1.1.min.js"></script>
+		<script src="js\index.js"></script>
+		<script src="js\profilo.js"></script>
+		<title>Profilo</title>
+	</head>
+
+	<body id="body">
+		<div id="top-bar">
+			<nav id="header" class="collapse navbar-collapse navbar-fixed-top">
+				<div class="container-fluid">
+					<div class="navbar-header">
+						<a class="navbar-brand forchetta" href="index.html">LA FORCHETTA</a>
+					</div>
+					<ul id="navbar" class="nav navbar-nav">
+						<li class="active"><a href="index.html">Home</a></li>
+						<li><a href="lista_ristoranti.html">Ristoranti</a></li>
+						<li><a href="ricerca.html">Ricerca</a></li>
+						<li><a href="prenotazione.html">Prenota</a></li>
+						<li><a href="login.html">Login</a></li>
+					</ul>
+				</div>
+			</nav>
+
+			<div class="jumbotron">
+				<div id="banner">
+					<h1 class="forchetta">LA FORCHETTA</h1>
+					<hr>
+					<p class="forchetta">Consulta i nostri ristoranti e prenota online</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="container">
+			<!--vengono tutti riempiti da script-->
+			<h1 id="nome_utente" class="forchetta title"></h1>
+			<p id="dettagli_utente"></p>
+			<p id="lista_prenotazioni"></p>
+
+			<div class="center">
+				<button id="modifica-button" class="btn">Modifica profilo</button>
+				<button id="elimina-button" class="btn">Elimina account</button>
+			</div>
+
+			<form id="modifica-profilo" class="hidden" action="profilo.html">
+				<div class="form-group row">
+					<label for="nome-input" class="col-lg-2 col-md-2 col-form-label">Nome</label>
+					<div class="col-lg-10 col-md-10">
+						<input class="form-control" type="text" id="modifica-nome">
+					</div>
+				</div>
+				<div class="form-group row">
+					<label for="cognome-input" class="col-lg-2 col-md-2 col-form-label">Cognome</label>
+					<div class="col-lg-10 col-md-10">
+						<input class="form-control" type="text" id="modifica-cognome">
+					</div>
+				</div>
+				<div class="form-group row">
+					<label for="password-input" class="col-lg-2 col-md-2 col-form-label">Password</label>
+					<div class="col-lg-10 col-md-10">
+						<input class="form-control" type="password" id="modifica-password">
+					</div>
+				</div>
+				<button type="submit" id="modifica-submit" class="btn form-btn">Modifica</button>
+				<button type="cancel" class="btn form-btn">Annulla</button>
+			</form>
+
+			<div id="snackbar" class="snackbar hide-s">Le informazioni sono state modificate con successo</div>
+
+			<form id="cancella-profilo" class="hidden" action="">
+				<div class="form-group row">
+					Sei sicuro di voler eliminare il tuo profilo?
+				</div>
+				<button type="submit" id="conferma-cancellazione" class="btn form-btn">Conferma</button>
+				<button type="cancel" class="btn form-btn">Annulla</button>
+			</form>
+
+		</div>
+	</body>
+
+	<div class="panel-footer">
+		Applicazioni Web e Cloud
+		<span class="align-center">
+			<!--target="_blank permette di aprire la pagina linkata in una nuova scheda-->
+			<a href="https://www.facebook.com/" target="_blank" title="Facebook"><img src="images/facebook_white.png" class="icon"></a>
+			<a href="https://www.instagram.com/" target="_blank" title="Instagram"><img src="images/instagram_white.png" class="icon"></a>
+			<a href="https://twitter.com/" target="_blank" title="Twitter"><img src="images/twitter_white.png" class="icon"></a>
+			<a href="https://it.pinterest.com/" target="_blank" title="Pinterest"><img src="images/pinterest_white.png" class="icon"></a>
+		</span>
+		<span class="align-dx">Teresa Tanzi</span>
+	</div>
+</html>

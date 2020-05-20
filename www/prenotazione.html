@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="stile\progetto-bootstrap\css\bootstrap.min.css">
+		<link rel="stylesheet" href="stile\myStyle.css">
+		<script src="js\jquery-3.1.1.min.js"></script>
+		<script src="js\index.js"></script>
+		<script src="js\prenotazione.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.3/jspdf.debug.js"></script>
+		<script src="js\html2canvas.js"></script>
+		<title>Prenotazione</title>
+	</head>
+
+	<body id="body">
+		<div id="top-bar">
+			<nav id="header" class="collapse navbar-collapse navbar-fixed-top">
+				<div class="container-fluid">
+					<div class="navbar-header">
+						<a class="navbar-brand forchetta" href="index.html">LA FORCHETTA</a>
+					</div>
+					<ul id="navbar" class="nav navbar-nav">
+						<li class="active"><a href="index.html">Home</a></li>
+						<li><a href="lista_ristoranti.html">Ristoranti</a></li>
+						<li><a href="ricerca.html">Ricerca</a></li>
+						<li><a href="prenotazione.html">Prenota</a></li>
+						<li><a href="login.html">Login</a></li>
+					</ul>
+				</div>
+			</nav>
+
+			<div class="jumbotron">
+				<div id="banner">
+					<h1 class="forchetta">LA FORCHETTA</h1>
+					<hr>
+					<p class="forchetta">Consulta i nostri ristoranti e prenota online</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="container">
+			<h1 id="nome_ristorante" class="forchetta title">PRENOTAZIONE</h1>
+			<p id="login-msg" class="center">Per poter prenotare &egrave; necessario effettuare il <a href="login.html">login</a></p>
+
+			<form id="prenotazione-form" class="show" action="">
+				<div class="form-group row">
+					<label for="ristorante" class="col-lg-3 col-md-3 col-form-label">Ristorante</label>
+					<div class="col-lg-9 col-md-9">
+						<select class="form-control" id="ristorante">
+							<!--aggiungo le opzioni dinamicamente in base alle informazioni nello storage-->
+							<!--<option>Antica Osteria del Gallo</option>-->
+						</select>
+					</div>
+				</div>
+				<div class="form-group row">
+					<label for="menu" class="col-lg-3 col-md-3 col-form-label">Men&ugrave;</label>
+					<div class="col-lg-9 col-md-9">
+						<select class="form-control" id="menu">
+							<!--aggiungo le opzioni dinamicamente in base alle informazioni nello storage-->
+							<!--<option>Lago</option>-->
+						</select>
+					</div>
+				</div>
+				<div class="form-group row">
+					<label for="n-posti" class="col-lg-3 col-md-3 col-form-label">Numero di posti</label>
+					<div class="col-lg-9 col-md-9">
+						<input class="form-control" type="number" id="n-posti" min="1" required>
+					</div>
+				</div>
+				<div class="form-group row">
+					<label for="data" class="col-lg-3 col-md-3 col-form-label">Data</label>
+					<div class="col-lg-9 col-md-9">
+						<input class="form-control" type="date" id="data">
+					</div>
+				</div>
+				<div class="form-group row">
+					<label for="allergie" class="col-lg-3 col-md-3 col-form-label">Fascia oraria</label>
+					<div class="col-lg-9 col-md-9">
+						<div class="col-lg-3 col-md-3">
+							<div class="radio">
+								<label><input type="radio" name="optradio" value="19-21" checked>19-21</label> <!--i radio con lo stesso name vengono cosiderati in gruppo: non possono essere selezionati contemporaneamente-->
+							</div>
+						</div>
+						<div class="col-lg-6 col-md-6">
+							<div class="radio">
+								<label><input type="radio" name="optradio" value="21 in poi">21 in poi</label>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="posti-disponibili" class="center"></div>
+				<button type="submit" id="modifica-submit" class="btn form-btn">Prenota</button>
+			</form>
+
+			<!--div nascosto che viene mostrato per confermare la prenotazione: mostra i dettagli della prenotazione stessa-->
+			<div id="riassunto" class="hidden">
+				<h4 class="forchetta"><b>RIASSUNTO PRENOTAZIONE</b></h4>
+				<div id="canvas">
+					<div id="anagrafica">
+						<div class="row">
+							<div class="col-lg-2 col-md-2"><b>Titolare: </b></div>
+							<div class="col-lg-2 col-md-2" id="titolare"></div>
+						</div>
+						<div class="row">
+							<div class="col-lg-2 col-md-2"><b>Data dell'ordine: </b></div>
+							<div class="col-lg-2 col-md-2" id="data-ordine"></div>
+						</div>
+						<div class="row">
+							<div class="col-lg-2 col-md-2"><b>Dettagli dell'ordine: </b></div>
+						</div>
+					</div>
+					<table class="table">
+						<thead>
+					    	<tr>
+					        	<th>Ristorante</th>
+					        	<th>Men&ugrave;</th>
+					        	<th>Data</th>
+					        	<th>Fascia oraria</th>
+					        	<th>Prezzo</th>
+					        	<th>Numero di posti</th>
+					        	<th>Importo totale</th>
+					    	</tr>
+					    </thead>
+					    <tbody>
+					    	<tr id="dati-prenotazione">
+					    		<!--da riempire con i dati della prentazione-->
+					    	</tr>
+					    </tbody>
+					</table>
+				</div>
+				
+				<button id="conferma-prenotazione" class="btn col-lg-1 col-md-1 prenotazione">Conferma</button>
+				<button id="annulla-prenotazione" class="btn col-md-1 col-lg-1 prenotazione">Annulla</button>
+			</div>
+				
+		</div>
+	</body>
+
+	<div class="panel-footer">
+		Applicazioni Web e Cloud
+		<span class="align-center">
+			<!--target="_blank permette di aprire la pagina linkata in una nuova scheda-->
+			<a href="https://www.facebook.com/" target="_blank" title="Facebook"><img src="images/facebook_white.png" class="icon"></a>
+			<a href="https://www.instagram.com/" target="_blank" title="Instagram"><img src="images/instagram_white.png" class="icon"></a>
+			<a href="https://twitter.com/" target="_blank" title="Twitter"><img src="images/twitter_white.png" class="icon"></a>
+			<a href="https://it.pinterest.com/" target="_blank" title="Pinterest"><img src="images/pinterest_white.png" class="icon"></a>
+		</span>
+		<span class="align-dx">Teresa Tanzi</span>
+	</div>
+</html>

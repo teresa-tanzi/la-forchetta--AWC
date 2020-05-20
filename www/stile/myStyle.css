@@ -1,0 +1,378 @@
+/*body*/
+::selection { /*cambio il colore di sfondo del testo selezionato*/
+  background: #ffb7b7;
+}
+
+/*header*/
+/*carico i nuovi font dal file system*/
+@font-face {
+	font-family: 'Gotham-light'; /*a name to be used later*/
+	src: url('GOTHAM-LIGHT.TTF'); /*URL to font*/
+}
+
+@font-face {
+	font-family: 'Gotham'; /*a name to be used later*/
+	src: url('GOTHAM-MEDIUM.TTF'); /*URL to font*/
+}
+
+body {
+	font-family: verdana;
+}
+
+.forchetta {
+	font-family: "Gotham-light", verdana;
+}
+
+div#banner {
+	padding-left: 5%;
+	padding-right: 5%;
+}
+
+#navbar {
+	float: right; /*posiziono la navbar a destra*/
+}
+
+div.jumbotron {
+	background: url('jumbotron_background_opacity_60_black.png');
+	background-size: cover; /*l'immagine diventa di dimensioni da coprire tutto lo spazio a disposizione, mantenendo le proporzioni*/
+	background-repeat: no-repeat; /*se l'immagine non è abbastanza grande non viene ripetuta*/
+	background-position: center center; /*centro l'immagine*/
+	background-color: #000; /*colore che mostra se non viene caricata l'immagine*/
+	padding-top: 100px;
+	padding-bottom: 100px;
+	text-align: center;
+}
+
+.jumbotron h1, .jumbotron, .jumbotron p {
+	color: #eee;
+}
+
+a {
+	color: #eee;
+}
+
+a:hover {
+	color: #dd2d2d;
+}
+
+a:focus {
+	color: #dd2d2d;
+}
+
+.on-top {
+	background-color: transparent;
+}
+
+.not-top {
+	background-color: #501a1a;
+}
+
+.navbar-fixed-top {
+	transition-duration: 1s;
+}
+
+hr {
+	height: 2px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	width: 25%;
+}
+
+/*footer*/
+.panel-footer {
+	background-color: #501a1a;
+	color: #fff;
+	margin-top: 40px;
+	border-top: 0;
+	border-radius: 0;
+	padding: 7px;
+	padding-left: 30px;
+	padding-right: 30px;
+	font-size: 85%;
+}
+
+span.align-dx {
+	float: right;
+}
+
+img.icon {
+	height: 18px;
+	width: 18px;
+}
+
+span.align-center {
+	position: relative;
+    left: 35%;
+}
+
+/*box ristoranti: lista_ristoranti.html*/
+.thumbnail {
+	margin: 0; 
+	padding: 0;
+	border: 0;
+}
+
+.post-content {
+	background: #fff;
+	opacity: 0.95;
+	margin: auto; /*posiziona il div al centro (orizzontalmente)*/
+	margin-top: -30px;
+	padding: 9px;
+	text-align: center
+	position: relative;
+	width: 70%;
+	color: #000;
+	transition-duration: 1s; /*transizione per quando si esce dal div col mouse*/
+}
+
+.thumbnail:hover .post-content {
+	width: 100%; /*quando il mouse passa sopra al thumbnail l'etichetta si allarga del tutto*/
+	transition-duration: 1s;
+}
+
+form.image {
+	padding: 20px;
+}
+
+/*correzione button submit*/
+a:hover, a:focus {
+	text-decoration: none;
+}
+
+.image-submit {
+	border: 0;
+	padding: 0;
+}
+
+.image-submit:focus {
+	outline: none;
+}
+
+/*ricerca*/
+div.sx {
+    position: relative;
+    margin-left: -49.99%; /*-50% porta alla riga superiore*/
+}
+
+/*titolo pagine*/
+.title {
+	padding-bottom: 30px;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+/*dettagli_ristorante*/
+#indirizzo {
+	position: relative; /*va riposizionato perché in genere voglio che il titolo sia ben staccato, ma qui no*/
+	margin-top: -30px;
+}
+
+#map {
+	width: 680px;
+	height: 220px;
+	margin: auto;
+	margin-top: 40px;
+	margin-bottom: 40px;
+}
+
+p#dettagli_ristorante {
+	margin-top: 30px
+}
+
+h5 { /*etichette dei menu*/
+	width: 40%; /*visto che poi mostro il margine la larghezza indica quanto voglio lunga la linea*/
+	border-bottom: 1px solid #000; /*margine inferiore continuo, di un pixel e nerp*/
+	line-height: 0.1em; /*alza la linea fino a metà*/
+	margin: auto; /*posiziona al centro*/
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+span.menu-title { /*serve per non far vedere la linea che passa dietro*/
+	background:#fff; /*copre la riga a metà nella porzione con la scritta sopra*/
+	padding: 10px; 
+}
+
+#menu {
+	text-align: center;
+}
+
+h4:first-letter {
+	text-transform: uppercase;
+}
+
+.comment {
+	font-size: 85%;
+	font-style: italic;
+	margin-top: 40px;
+	margin-bottom: 40px;
+}
+
+.btn {
+	background-color: #501a1a;
+	color: #fff;
+}
+
+.btn:hover {
+	background-color: #dd2d2d;
+	color: #fff;
+}
+
+.btn:focus {
+	background-color: #dd2d2d;
+	color: #fff;
+	outline: none !important;
+}
+
+.btn-prenotazione {
+	margin-top: 40px;
+	margin-bottom: 80px;
+}
+
+/*form*/
+label {
+	line-height: 2;
+	font-weight: normal;
+}
+
+.form-control:focus {
+	border-color: #dd2d2d;
+	box-shadow:  0 0 1px #dd2d2d, 0 0 1px #dd2d2d;
+}
+
+.form-btn {
+	width: 30%;
+}
+
+form {
+	padding: 40px;
+}
+
+.center {
+	text-align: center;
+}
+
+#errore-registrazione, #errore-login {
+	font-size: 80%;
+	margin-bottom: 20px;
+	color: #dd2d2d;
+}
+
+/*profilo utente*/
+#dettagli_utente {
+	text-align: center;
+	position: relative;
+	margin-top: -30px;
+}
+
+#lista_prenotazioni {
+	margin-top: 40px;
+	margin-bottom: 40px;
+}
+
+#modifica-profilo, #form-ricerca, #prenotazione-form {
+	width: 60%;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+#cancella-profilo {
+	width: 40%;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+.table-btn {
+	padding: 1px;
+	padding-left: 10px;
+	padding-right: 10px;
+	font-size: 90%;
+}
+
+#snackbar {
+    background-color: #501a1a;
+    color: #fff;
+    text-align: center;
+    width: 400px;
+    /*position: relative; /*per poterlo centrare orizzontalmente*/
+    left: 50%; /*sposta il div facendolo iniziare a metà del container*/
+    transform: translateX(-50%); /*sposta il div a sinistra della sua metà*/
+    padding: 10px;
+    position: fixed; /*se scrollo resta fisso*/
+    bottom: 30px; /*30 px sopra alla fine della finestra*/
+}
+
+#snackbar.hide-s {
+    opacity: 0;
+    transition-duration: 1s;
+}
+
+#snackbar.show-s {
+    opacity: 1;
+    transition-duration: 1s;
+}
+
+/*prenotazione*/
+p a {
+	color: #dd2d2d;
+}
+
+p a:hover {
+	text-decoration: underline;
+}
+
+#login-msg {
+	margin-bottom: 42px;
+}
+
+#posti-disponibili {
+	position: relative;
+	margin-top: -10px;
+	margin-bottom: 15px;
+}
+
+#anagrafica {
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+button.prenotazione {
+	margin-left: 5px; /*per separare i due bottoni*/
+}
+
+/*index*/
+.glyphicon {
+	color: #eee;
+	font-size: 300%;
+}
+
+.cerchio {
+	background-color: #501a1a;
+	padding: 20px;
+	border-radius:50%;
+	width: 87px;
+	margin: auto; /*centra i div*/
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+
+.cerchio:hover {
+	background-color: #dd2d2d;
+}
+
+.etichetta {
+	font-size: 150%;
+	font-weight: bold;
+}
+
+hr.divisore {
+	border-top: solid 1px #ddd;
+	margin-top: 60px;
+	margin-bottom: 60px;
+	width: 50%;
+}
+
+p.index-p {
+	margin-top: 40px;
+}

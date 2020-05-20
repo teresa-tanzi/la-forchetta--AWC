@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="stile\progetto-bootstrap\css\bootstrap.min.css">
+		<link rel="stylesheet" href="stile\myStyle.css">
+		<script src="js\jquery-3.1.1.min.js"></script>
+		<script src="js\index.js"></script>
+		<script src="js\ricerca.js"></script>
+		<title>Ricerca</title>
+	</head>
+
+	<body id="body">
+		<div id="top-bar">
+			<nav id="header" class="collapse navbar-collapse navbar-fixed-top">
+				<div class="container-fluid">
+					<div class="navbar-header">
+						<a class="navbar-brand forchetta" href="index.html">LA FORCHETTA</a>
+					</div>
+					<ul id="navbar" class="nav navbar-nav">
+						<li class="active"><a href="index.html">Home</a></li>
+						<li><a href="lista_ristoranti.html">Ristoranti</a></li>
+						<li><a href="ricerca.html">Ricerca</a></li>
+						<li><a href="prenotazione.html">Prenota</a></li>
+						<li><a href="login.html">Login</a></li>
+					</ul>
+				</div>
+			</nav>
+
+			<div class="jumbotron">
+				<div id="banner">
+					<h1 class="forchetta">LA FORCHETTA</h1>
+					<hr>
+					<p class="forchetta">Consulta i nostri ristoranti e prenota online</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="container">
+			<h1 class="forchetta title">Ricerca</h1>
+
+			<form id="form-ricerca" action="#">
+				<div class="form-group row">
+					<label for="nome-ristorante" class="col-lg-3 col-md-3 col-form-label">Nome</label>
+					<div class="col-lg-9 col-md-9">
+						<input class="form-control" type="text" id="nome-ristorante">
+					</div>
+				</div>
+				<div class="form-group row">
+					<label for="tipologia" class="col-lg-3 col-md-3 col-form-label">Tipologia</label>
+					<div class="col-lg-9 col-md-9">
+						<select class="form-control" id="tipologia">
+							<option>Qualsiasi</option>
+							<option>Carne</option>
+							<option>Cucina biologica</option>
+							<option>Cucina casalinga</option>
+							<option>Cucina locale</option>
+							<option>Cucina mediterranea</option>
+							<option>Cucina sperimentale</option>
+							<option>Cucina tradizionale</option>
+							<option>Pesce</option>
+							<option>Pizzeria</option>
+							<option>Vegetariano</option>
+						</select>
+					</div>
+				</div>
+				<div class="form-group row">
+					<label for="citta" class="col-lg-3 col-md-3 col-form-label">Citta</label>
+					<div class="col-lg-9 col-md-9">
+						<input class="form-control" type="text" id="citta">
+					</div>
+				</div>
+				<div class="form-group row">
+					<label for="provincia" class="col-lg-3 col-md-3 col-form-label">Provincia</label>
+					<div class="col-lg-9 col-md-9">
+						<input class="form-control" type="text" placeholder="MI" id="provincia" maxlength="2">
+					</div>
+				</div>
+				<div class="form-group row">
+					<label for="prezzo" class="col-lg-3 col-md-3 col-form-label">Fascia di prezzo</label>
+					<div class="col-lg-9 col-md-9">
+						<select class="form-control" id="prezzo">
+							<option>Qualsiasi</option>
+							<option>Alta</option>
+							<option>Media</option>
+							<option>Economica</option>
+						</select>
+					</div>
+				</div>
+				<div class="form-group row">
+					<label for="n-posti" class="col-lg-3 col-md-3 col-form-label">Numero di posti</label>
+					<div class="col-lg-9 col-md-9">
+						<input class="form-control" type="number" id="n-posti" min="1">
+					</div>
+				</div>
+
+				<div class="form-group row">
+					<label for="allergie" class="col-lg-3 col-md-3 col-form-label">Allergie ed intolleranze</label>
+					<div id="cb" class="col-lg-9 col-md-9">
+						<div class="row">
+							<div class="col-lg-3 col-md-3">
+								<div class="form-check">
+									<label class="form-check-label">
+										<input type="checkbox" class="form-check-input" value="glutine">
+										Glutine
+									</label>
+								</div>
+							</div>
+							<div class="col-lg-3 col-md-3">
+								<div class="form-check">
+									<label class="form-check-label">
+										<input type="checkbox" class="form-check-input" value="latte">
+										Latte
+									</label>
+								</div>
+							</div>
+							<div class="col-lg-3 col-md-3">
+								<div class="form-check">
+									<label class="form-check-label">
+										<input type="checkbox" class="form-check-input" value="sedano">
+										Sedano
+									</label>
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-lg-3 col-md-3">
+								<div class="form-check">
+									<label class="form-check-label">
+										<input type="checkbox" class="form-check-input" value="lupini">
+										Lupini
+									</label>
+								</div>
+							</div>
+							<div class="col-lg-3 col-md-3">
+								<div class="form-check">
+									<label class="form-check-label">
+										<input type="checkbox" class="form-check-input" value="pesce">
+										Pesce
+									</label>
+								</div>
+							</div>
+							<div class="col-lg-3 col-md-3">
+								<div class="form-check">
+									<label class="form-check-label">
+										<input type="checkbox" class="form-check-input" value="crostacei">
+										Crostacei
+									</label>
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-lg-3 col-md-3">
+								<div class="form-check">
+									<label class="form-check-label">
+										<input type="checkbox" class="form-check-input" value="molluschi">
+										Molluschi
+									</label>
+								</div>
+							</div>
+							<div class="col-lg-6 col-md-6">
+								<div class="form-check">
+									<label class="form-check-label">
+										<input type="checkbox" class="form-check-input" value="frutta">
+										Frutta secca
+									</label>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<button type="submit" id="modifica-submit" class="btn form-btn">Cerca</button>
+			</form>
+
+			<p id="risultato-ricerca"></p>
+		</div>
+	</body>
+
+	<div class="panel-footer">
+		Applicazioni Web e Cloud
+		<span class="align-center">
+			<!--target="_blank permette di aprire la pagina linkata in una nuova scheda-->
+			<a href="https://www.facebook.com/" target="_blank" title="Facebook"><img src="images/facebook_white.png" class="icon"></a>
+			<a href="https://www.instagram.com/" target="_blank" title="Instagram"><img src="images/instagram_white.png" class="icon"></a>
+			<a href="https://twitter.com/" target="_blank" title="Twitter"><img src="images/twitter_white.png" class="icon"></a>
+			<a href="https://it.pinterest.com/" target="_blank" title="Pinterest"><img src="images/pinterest_white.png" class="icon"></a>
+		</span>
+		<span class="align-dx">Teresa Tanzi</span>
+	</div>
+</html>
